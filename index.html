@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Shopping List</title>
+	</head>
+	<body>
+		<div class="shopping-list">
+			<header class="shopping-list__header">
+				<h2>Shopaholic</h2>
+				<p>My shopping list</p>
+				<form id="search" autocomplete="off">
+					<label for="search">
+						<input
+							type="search"
+							id="search__item"
+							placeholder="Search items..."
+						/>
+					</label>
+					<label for="hide">
+						Hide list
+						<input type="checkbox" id="hide" />
+					</label>
+				</form>
+			</header>
+			<main class="shopping-list__main">
+				<form id="add-item" autocomplete="off">
+					<input
+						type="text"
+						id="add"
+						placeholder="What do you want to buy?"
+					/><input type="submit" id="btn--add" value="Add" />
+				</form>
+				<div class="shopping-list__action">
+					<h3>Items To Buy</h3>
+					<ul>
+						<li class="item">
+							Milk <input type="button" id="btn--delete" value="delete" />
+						</li>
+						<li class="item">
+							Sugar <input type="button" id="btn--delete" value="delete" />
+						</li>
+						<li class="item">
+							Pizza <input type="button" id="btn--delete" value="delete" />
+						</li>
+						<li class="item">
+							Meat <input type="button" id="btn--delete" value="delete" />
+						</li>
+					</ul>
+				</div>
+			</main>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>
