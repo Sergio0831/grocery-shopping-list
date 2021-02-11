@@ -93,6 +93,7 @@ form#add-item input[type='submit'] {
 	border-left: 3px solid #ccc;
 	transition: border-left-color 0.3s;
 	cursor: pointer;
+	animation: fadeIn 1s;
 }
 
 .shopping-list__action ul .item:hover {
@@ -110,7 +111,69 @@ form#add-item input[type='submit'] {
 	transition: all 0.3s;
 }
 
+@keyframes {
+	form {
+		opacity: 0;
+		transform: scale(0.4);
+	}
+	to {
+		opacity: 1;
+		transform: scale0(1);
+	}
+}
+
 .shopping-list__action ul .item #btn--delete:hover {
 	color: #fff;
 	background: #000;
+}
+/* TABS */
+.tabs {
+	padding: 20px;
+}
+
+.tabs ul li {
+	transition: all 0.3s;
+}
+
+.tabs ul li:hover {
+	background: #e05044;
+	color: #fff;
+}
+
+.tabs li {
+	display: inline-flex;
+	padding: 0.5em 1em;
+	font-size: 0.9em;
+	background: #ddd;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.tabs .tabs__panel {
+	display: none;
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.tabs .tabs__panel p {
+	font-size: 0.9em;
+}
+
+.tabs .tabs__panel.active {
+	display: block;
+}
+
+.tabs .selected {
+	background: rgb(139, 139, 139);
+	color: #fff;
+}
+
+.tabs .tabs__panel button {
+	border: 1px solid yellow;
+	background: rgb(255, 255, 149);
+	margin-top: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
 }

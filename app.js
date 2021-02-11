@@ -59,3 +59,46 @@ searchInput.addEventListener('keyup', (e) => {
 			: (grocery.style.display = 'flex');
 	});
 });
+
+/********* Tabs **********/
+const tabsHeading = document.querySelector('.tabs__heading');
+const tabsPanels = document.querySelectorAll('.tabs__panel');
+let selectedPanel = null;
+
+tabsHeading.addEventListener('click', (e) => {
+	let target = e.target;
+	let dataAttribute = e.target.dataset.clicked;
+	if (target.tagName === 'LI') {
+		// remove the currently selected element
+		if (selectedPanel !== null) {
+			selectedPanel.classList.toggle('selected');
+		}
+		selectedPanel = target;
+		selectedPanel.classList.toggle('selected');
+
+		// show panel
+		let targetPanel = document.querySelector(dataAttribute);
+
+		tabsPanels.forEach((item) => {
+			item === targetPanel
+				? item.classList.add('active')
+				: item.classList.remove('active');
+		});
+	}
+});
+
+/********* Show answer **********/
+const showAnswerBtn = document.getElementById('show-answer');
+
+showAnswerBtn.addEventListener('click', (e) => {
+	let p = document.createElement('p');
+	p.textContent = 'Blue cheese';
+	// document.getElementById('joke').appendChild(p);
+	document.getElementById('joke').insertAdjacentHTML(
+		'beforeend',
+		`
+	<p><strong>Blue Cheese</strong></p>
+	`
+	);
+	e.target.style.display = 'none';
+});
